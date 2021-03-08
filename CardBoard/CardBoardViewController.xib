@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardBoardViewController" customModule="CardBoard" customModuleProvider="target">
             <connections>
                 <outlet property="bottomView" destination="4R2-WN-qSQ" id="ztI-kk-vQI"/>
+                <outlet property="dragger" destination="02U-7c-faN" id="uPm-ZL-H4v"/>
                 <outlet property="midView" destination="AVY-cm-2OY" id="KXA-6A-vj2"/>
                 <outlet property="topView" destination="IAh-Zi-vn2" id="ItR-g5-adg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -23,19 +24,73 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4R2-WN-qSQ">
                     <rect key="frame" x="0.0" y="742" width="414" height="120"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fully Expanded" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tx6-K7-U8I">
+                            <rect key="frame" x="149" y="49.5" width="116" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
                     <color key="backgroundColor" systemColor="systemGreenColor"/>
                     <constraints>
+                        <constraint firstItem="Tx6-K7-U8I" firstAttribute="centerY" secondItem="4R2-WN-qSQ" secondAttribute="centerY" id="BJK-ZY-VC4"/>
+                        <constraint firstItem="Tx6-K7-U8I" firstAttribute="centerX" secondItem="4R2-WN-qSQ" secondAttribute="centerX" id="jOU-dg-dVz"/>
                         <constraint firstAttribute="height" constant="120" id="nK3-P7-8zZ"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AVY-cm-2OY">
                     <rect key="frame" x="0.0" y="208" width="414" height="534"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expanded" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjR-hz-bcR">
+                            <rect key="frame" x="169" y="256.5" width="76" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
                     <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    <constraints>
+                        <constraint firstItem="tjR-hz-bcR" firstAttribute="centerX" secondItem="AVY-cm-2OY" secondAttribute="centerX" id="R2p-Cb-3KT"/>
+                        <constraint firstItem="tjR-hz-bcR" firstAttribute="centerY" secondItem="AVY-cm-2OY" secondAttribute="centerY" id="Xgz-qg-MKP"/>
+                    </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IAh-Zi-vn2">
                     <rect key="frame" x="0.0" y="88" width="414" height="120"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collapsed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00B-Aa-Qxp">
+                            <rect key="frame" x="169" y="50" width="76" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="02U-7c-faN">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ph6-aI-D9L">
+                                    <rect key="frame" x="157" y="19" width="100" height="2"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="2" id="Min-HC-aX3"/>
+                                        <constraint firstAttribute="width" constant="100" id="vJP-c3-Yfi"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="tertiaryLabelColor"/>
+                            <constraints>
+                                <constraint firstItem="Ph6-aI-D9L" firstAttribute="centerY" secondItem="02U-7c-faN" secondAttribute="centerY" id="0HY-Nq-x5X"/>
+                                <constraint firstAttribute="height" constant="40" id="4PW-nO-NZs"/>
+                                <constraint firstItem="Ph6-aI-D9L" firstAttribute="centerX" secondItem="02U-7c-faN" secondAttribute="centerX" id="ldJ-P2-KGY"/>
+                            </constraints>
+                        </view>
+                    </subviews>
                     <color key="backgroundColor" systemColor="systemBlueColor"/>
                     <constraints>
+                        <constraint firstItem="02U-7c-faN" firstAttribute="top" secondItem="IAh-Zi-vn2" secondAttribute="top" id="P9U-1U-eEg"/>
+                        <constraint firstItem="00B-Aa-Qxp" firstAttribute="centerY" secondItem="IAh-Zi-vn2" secondAttribute="centerY" id="U8H-BE-Uce"/>
+                        <constraint firstItem="02U-7c-faN" firstAttribute="leading" secondItem="IAh-Zi-vn2" secondAttribute="leading" id="k5q-nO-JZ1"/>
+                        <constraint firstAttribute="trailing" secondItem="02U-7c-faN" secondAttribute="trailing" id="oTS-1W-ai4"/>
+                        <constraint firstItem="00B-Aa-Qxp" firstAttribute="centerX" secondItem="IAh-Zi-vn2" secondAttribute="centerX" id="tuV-d2-0WE"/>
                         <constraint firstAttribute="height" constant="120" id="uBQ-Bg-vBs"/>
                     </constraints>
                 </view>
@@ -55,10 +110,13 @@
                 <constraint firstItem="AVY-cm-2OY" firstAttribute="top" secondItem="IAh-Zi-vn2" secondAttribute="bottom" id="xUG-0u-T9N"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
-            <point key="canvasLocation" x="35" y="109"/>
+            <point key="canvasLocation" x="34.782608695652179" y="108.48214285714285"/>
         </view>
     </objects>
     <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
@@ -70,6 +128,9 @@
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
