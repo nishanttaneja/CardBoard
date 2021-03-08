@@ -106,8 +106,13 @@ extension ViewController {
 extension ViewController {
     private func addGestureRecognizers() {
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
-        panGestureRecognizer.allowedScrollTypesMask = .continuous
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture(_:)))
         cardboardVC.dragger.addGestureRecognizer(panGestureRecognizer)
+        cardboardVC.dragger.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    @objc private func handleTapGesture(_ recognizer: UITapGestureRecognizer) {
+        runAnimatorsIfNeeded(withDuration: 0.5)
     }
     
     @objc private func handlePanGesture(_ recognizer: UIPanGestureRecognizer) {
